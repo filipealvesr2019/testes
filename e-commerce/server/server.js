@@ -2,13 +2,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
+require('dotenv').config();
+const mongoURI = process.env.MONGODB_URI;
 const port = process.env.PORT || 3001;
 
 // Middleware para análise de corpo de solicitação JSON
 app.use(bodyParser.json());
 
 // Conexão com o banco de dados MongoDB (certifique-se de ter o MongoDB instalado e em execução)
-mongoose.connect("mongodb://localhost/ecommerce_db", {
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
