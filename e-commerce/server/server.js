@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const app = express();
 require('dotenv').config();
 const mongoURI = process.env.MONGODB_URI;
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Middleware para análise de corpo de solicitação JSON
 app.use(bodyParser.json());
