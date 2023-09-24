@@ -17,6 +17,7 @@ mongoose.connect(mongoURI, {
 
 // Importação e uso das rotas de produtos
 const productRoutes = require("../server/routes/productRoutes");
+app.use("/", productRoutes);
 app.use("/api/products", productRoutes);
 
 // Iniciar o servidor
