@@ -21,5 +21,5 @@ app.use("/api/products", productRoutes);
 
 // Iniciar o servidor
 app.listen(port, () => {
-  console.log(`Servidor Express rodando na porta ${port}`);
+  console.log(`Servidor Express rodando na porta http://localhost:${port}`);
 });
