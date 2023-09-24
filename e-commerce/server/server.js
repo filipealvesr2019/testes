@@ -20,8 +20,6 @@ mongoose.connect(mongoURI, {
 const productRoutes = require("../server/routes/productRoutes");
 app.use("/", productRoutes);
 app.use("/api/products", productRoutes);
-
-
 app.use((error, req, res, next) => {
   if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
     // Erro de análise JSON

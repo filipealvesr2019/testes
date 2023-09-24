@@ -74,6 +74,10 @@ class ProductController {
       res.status(500).json({ error: "Erro ao excluir produto" });
     }
   }
+
+  
 }
+
+
 
 module.exports = ProductController;
