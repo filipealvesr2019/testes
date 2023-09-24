@@ -21,6 +21,17 @@ const productRoutes = require("../server/routes/productRoutes");
 app.use("/", productRoutes);
 app.use("/api/products", productRoutes);
 
+
+app.use((error, req, res, next) => {
+  if (error instanceof SyntaxError && error.status === 400 && 'body' in error) {
+    // Erro de análise JSON
+    res.status(400).json({ error: 'Erro na análise JSON' });
+  } else {
+    // Outros erros
+    next();
+  }
+});
+
 // Iniciar o servidor
 app.listen(port, () => {
   console.log(`Servidor Express rodando na porta http://localhost:${port}`);

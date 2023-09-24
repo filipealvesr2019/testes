@@ -39,7 +39,7 @@ class ProductController {
       res.status(500).json({ error: "Erro ao criar produto" });
     }
   }
-
+  
   // Atualizar um produto pelo ID
   static async updateProduct(req, res) {
     const productId = req.params.id;
