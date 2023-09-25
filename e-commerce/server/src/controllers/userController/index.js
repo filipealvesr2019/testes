@@ -1,5 +1,5 @@
 const User = require('../../models/User')
-// rota de criar produto
+// rota de listar produto
 const userController = {
     async createUser(req, res){
 
