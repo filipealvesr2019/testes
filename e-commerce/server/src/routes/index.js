@@ -1,11 +1,11 @@
 const express = require("express");
 const routes = express.Router();
-
+const UserController = require("../controllers/userController")
 routes.get("/", (req, res) => {
     res.send("Olá, mundo!");
 });
 // rotas do login
-routes.post("/users")
+routes.post("/users", UserController.createUser)
 routes.get("/users")
 routes.get("/users/:user_id")
 routes.post("/users/login")
