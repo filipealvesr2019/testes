@@ -6,8 +6,8 @@ routes.get("/", (req, res) => {
 });
 // rotas do login
 routes.post("/users", UserController.createUser)
-routes.get("/users")
-routes.get("/users/:user_id")
+routes.get("/users", UserController.getUsers)
+routes.get("/users/:user_id", UserController.getUsersById)
 routes.post("/users/login")
 
 
